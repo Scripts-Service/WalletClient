@@ -20,10 +20,10 @@ class Welcome extends CI_Controller {
 				foreach ($data as $value) {
 					$isSave = $this->users->save($value);
 					if($isSave[0]->ResultCode == 1){
-						$this->displayLog->show("--> Save Success [Email Error] | Ref: " . $value->TransectionData->Ref . " Amount: ". number_format($value->TransectionData->Amount) . " personalMessage: " .$value->TransectionData->personalMessage);
+						$this->displayLog->show("--> Save Success [Email Error] | Amount: ". number_format($value->TransectionData->Amount) . " Email: " .$value->TransectionData->personalMessage);
 						sleep(1);
 					}elseif($isSave[0]->ResultCode == 2){
-						$this->displayLog->show("--> Save Success | Ref: " . $value->TransectionData->Ref . " Amount: ". number_format($value->TransectionData->Amount) . " personalMessage: " .$value->TransectionData->personalMessage);
+						$this->displayLog->show("--> Save Success | Amount: ". number_format($value->TransectionData->Amount) . " Email: " .$value->TransectionData->personalMessage);
 						sleep(1);
 					}
 					sleep(1);
